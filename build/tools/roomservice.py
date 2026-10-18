@@ -206,7 +206,8 @@ def validate_repository(repo_name, target_path):
     repo_lower = repo_name.lower()
     target_lower = target_path.lower()
 
-    if not any(x in repo_lower for x in ('crdroidandroid', 'themuppets', 'lineageos')):
+    if not (repo_lower.startswith('saikiranworks/') or
+            any(x in repo_lower for x in ('crdroidandroid', 'themuppets', 'lineageos'))):
         return False, "Unsupported repository org"
 
     if 'lineageos' in repo_lower:
